@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="883B5180-4837-4633-BA9E-3F959E6C325E" Name="Com Utility" Language="1041" Version="1.2.0.1" Manufacturer="matsumoto_sp" UpgradeCode="64F71033-FD0F-4025-94F6-84D331E6679F">
+        <Package Description="Utility tools for COM object programing" Comments="Com Utility" InstallerVersion="200" Compressed="yes" SummaryCodepage="932" Platforms="x64" />
+        <Media Id="1" Cabinet="simple.cab" EmbedCab="yes" />
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder" Name="PFiles">
+                <Directory Id="COMUTILITY" Name="ComUtility">
+                    <Component Id="cmpC5FB9C9012D68133820A098CB5F7516A" DiskId="1" Guid="11D14342-92B0-4E5E-B07E-B4B37025B48D">
+                        <File Id="fil371D2A07A08975196203D7D08B0CAB5B" Name="ComUtility.dll" Source="..\Release\ComUtility.dll">
+                            <TypeLib Id="{77EAA6F3-5CAE-4620-B63A-E3F811CC2533}" Description="ComUtilityLib" Language="0" MajorVersion="1" MinorVersion="0">
+                                <Class Id="{0B46BD13-5612-4BED-BE26-5BCEA4225D6F}" Context="InprocServer32" Description="DispIfInfo Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtilityLib.DispIfInfo.1" Description="DispIfInfo Class">
+                                        <ProgId Id="ComUtilityLib.DispIfInfo" Description="DispIfInfo Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{0FCC9F7E-601D-4542-9FDD-F9136B005956}" Context="InprocServer32" Description="VariantCollection Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtility.VariantCollection.1" Description="VariantCollection Class">
+                                        <ProgId Id="ComUtility.VariantCollection" Description="VariantCollection Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{1D5E9E4D-7ED2-4297-A209-E9E7DD861C37}" Context="InprocServer32" Description="CoClassInfo Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtility.CoClassInfo.1" Description="CoClassInfo Class">
+                                        <ProgId Id="ComUtility.CoClassInfo" Description="CoClassInfo Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{708122C8-D088-4C90-AF62-DA3C1F635F59}" Context="InprocServer32" Description="TypeLibInfo Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtilityLib.TypeLibInfo.1" Description="TypeLibInfo Class">
+                                        <ProgId Id="ComUtilityLib.TypeLibInfo" Description="TypeLibInfo Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{82620C60-CC4E-41B6-A184-6E9ED3FBA41B}" Context="InprocServer32" Description="IfInfo Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtilityLib.IfInfo.1" Description="IfInfo Class">
+                                        <ProgId Id="ComUtilityLib.IfInfo" Description="IfInfo Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{AE77E4DA-267D-41A2-9C8F-7452E808181F}" Context="InprocServer32" Description="PropertyDesc Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtilityLib.PropertyDesc.1" Description="PropertyDesc Class">
+                                        <ProgId Id="ComUtilityLib.PropertyDesc" Description="PropertyDesc Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{C5829FEF-5480-4BB5-8CC6-9A6209E85B0C}" Context="InprocServer32" Description="Reflector Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtilityLib.Reflector.1" Description="Reflector Class">
+                                        <ProgId Id="ComUtilityLib.Reflector" Description="Reflector Class" />
+                                    </ProgId>
+                                </Class>
+                                <Interface Id="{26624581-2197-45E7-AA4D-BA659936CE69}" Name="IIfInfo" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{2BD19E75-7F91-409B-97E0-EF24D33C9DFE}" Name="IDispIfInfo" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{3009C250-3641-45C1-9A91-0B8B136A448E}" Name="IPropertyDesc" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{7B2C27F4-A08F-4F4B-BBC4-44DA25334476}" Name="ITypeLibInfo" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{81B20B1E-2253-4F7E-B39E-1DFA31BA4956}" Name="IReflector" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{D63848F7-65D2-49BF-8E6F-49DEB7ED848F}" Name="IVariantCollection" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{DF1275D2-C26E-44ED-9E2A-0DF7B58E08AF}" Name="ICoClassInfo" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                            </TypeLib>
+                        </File>
+                    </Component>
+                </Directory>
+            </Directory>
+            <Directory Id="ProgramFiles64Folder" Name="PFiles">
+                <Directory Id="COMUTILITY_64" Name="ComUtility">
+                    <Component DiskId="1" Guid="973D699F-2BC9-4038-885B-BC71C685AC5D" Id="cmp_win64" Win64="yes">
+                        <File Id="COMUTILITY.DLL" Name="ComUtility.dll" Source="..\x64\Release\ComUtility.dll">
+                            <TypeLib Id="{77EAA6F3-5CAE-4620-B63A-E3F811CC2533}" Description="ComUtilityLib" Language="0" MajorVersion="1" MinorVersion="0">
+                                <Class Id="{0B46BD13-5612-4BED-BE26-5BCEA4225D6F}" Context="InprocServer32" Description="DispIfInfo Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtilityLib.DispIfInfo.1" Description="DispIfInfo Class">
+                                        <ProgId Id="ComUtilityLib.DispIfInfo" Description="DispIfInfo Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{0FCC9F7E-601D-4542-9FDD-F9136B005956}" Context="InprocServer32" Description="VariantCollection Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtility.VariantCollection.1" Description="VariantCollection Class">
+                                        <ProgId Id="ComUtility.VariantCollection" Description="VariantCollection Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{1D5E9E4D-7ED2-4297-A209-E9E7DD861C37}" Context="InprocServer32" Description="CoClassInfo Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtility.CoClassInfo.1" Description="CoClassInfo Class">
+                                        <ProgId Id="ComUtility.CoClassInfo" Description="CoClassInfo Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{708122C8-D088-4C90-AF62-DA3C1F635F59}" Context="InprocServer32" Description="TypeLibInfo Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtilityLib.TypeLibInfo.1" Description="TypeLibInfo Class">
+                                        <ProgId Id="ComUtilityLib.TypeLibInfo" Description="TypeLibInfo Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{82620C60-CC4E-41B6-A184-6E9ED3FBA41B}" Context="InprocServer32" Description="IfInfo Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtilityLib.IfInfo.1" Description="IfInfo Class">
+                                        <ProgId Id="ComUtilityLib.IfInfo" Description="IfInfo Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{AE77E4DA-267D-41A2-9C8F-7452E808181F}" Context="InprocServer32" Description="PropertyDesc Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtilityLib.PropertyDesc.1" Description="PropertyDesc Class">
+                                        <ProgId Id="ComUtilityLib.PropertyDesc" Description="PropertyDesc Class" />
+                                    </ProgId>
+                                </Class>
+                                <Class Id="{C5829FEF-5480-4BB5-8CC6-9A6209E85B0C}" Context="InprocServer32" Description="Reflector Class" ThreadingModel="apartment" Version="1.0" Programmable="yes">
+                                    <ProgId Id="ComUtilityLib.Reflector.1" Description="Reflector Class">
+                                        <ProgId Id="ComUtilityLib.Reflector" Description="Reflector Class" />
+                                    </ProgId>
+                                </Class>
+                                <Interface Id="{26624581-2197-45E7-AA4D-BA659936CE69}" Name="IIfInfo" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{2BD19E75-7F91-409B-97E0-EF24D33C9DFE}" Name="IDispIfInfo" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{3009C250-3641-45C1-9A91-0B8B136A448E}" Name="IPropertyDesc" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{7B2C27F4-A08F-4F4B-BBC4-44DA25334476}" Name="ITypeLibInfo" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{81B20B1E-2253-4F7E-B39E-1DFA31BA4956}" Name="IReflector" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{D63848F7-65D2-49BF-8E6F-49DEB7ED848F}" Name="IVariantCollection" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                                <Interface Id="{DF1275D2-C26E-44ED-9E2A-0DF7B58E08AF}" Name="ICoClassInfo" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+                            </TypeLib>
+                        </File>
+                    </Component>
+                </Directory>
+            </Directory>
+        </Directory>
+        <Feature Id="DefaultFeature" Title="Main Feature" Level="1">
+            <ComponentRef Id="cmpC5FB9C9012D68133820A098CB5F7516A" />
+            <ComponentRef Id="cmp_win64" />
+        </Feature>
+        <UI />
+        <UIRef Id="WixUI_Minimal" />
+        <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+        <Binary Id="license.rtf" SourceFile="license.rtf" />
+    </Product>
+</Wix>

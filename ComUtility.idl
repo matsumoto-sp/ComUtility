@@ -1,0 +1,161 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(26624581-2197-45E7-AA4D-BA659936CE69),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IIfInfo : IDispatch{
+	[propget, id(1)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(2)] HRESULT IID([out, retval] BSTR* pVal);
+	[propget, id(4)] HRESULT TypeLib([out, retval] BSTR* pVal);
+	[id(5)] HRESULT SetupIf([in] BSTR iid);
+};
+[
+	object,
+	uuid(81B20B1E-2253-4F7E-B39E-1DFA31BA4956),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IReflector : IDispatch{
+	[id(1)] HRESULT ScanIf([in] IDispatch* obj, [out, retval] VARIANT* result);
+	[id(2)] HRESULT ScanDispIf([in] IDispatch* obj, [out, retval] VARIANT* result);
+	[id(3)] HRESULT IsCollection([in] IDispatch* obj, [out, retval] VARIANT_BOOL* result);
+	[id(4)] HRESULT SearchCoClass([in] IDispatch* obj, [out, retval] VARIANT* result);
+};
+[
+	object,
+	uuid(D63848F7-65D2-49BF-8E6F-49DEB7ED848F),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IVariantCollection : IDispatch{
+	[propget, id(0)] HRESULT Item([in] LONG index, [out, retval] VARIANT* pVal);
+	[propget, id(DISPID_NEWENUM), restricted] HRESULT _NewEnum([out, retval] IUnknown** pVal);
+	[propget, id(1)] HRESULT Count([out, retval] LONG* pVal);
+	[id(3)] HRESULT Add(VARIANT val);
+};
+[
+	object,
+	uuid(2BD19E75-7F91-409B-97E0-EF24D33C9DFE),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDispIfInfo : IDispatch{
+	[propget, id(1)] HRESULT Functions([out, retval] IDispatch** pVal);
+	[propget, id(2)] HRESULT Properties([out, retval] IDispatch** pVal);
+};
+[
+	object,
+	uuid(3009C250-3641-45C1-9A91-0B8B136A448E),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IPropertyDesc : IDispatch{
+	[propget, id(1)] HRESULT Name([out, retval] BSTR* pVal);
+	[propput, id(1)] HRESULT Name([in] BSTR newVal);
+	[propget, id(2)] HRESULT Vt([out, retval] SHORT* pVal);
+	[propput, id(2)] HRESULT Vt([in] SHORT newVal);
+	[propget, id(3)] HRESULT Invkind([out, retval] SHORT* pVal);
+	[propput, id(3)] HRESULT Invkind([in] SHORT newVal);
+	[propget, id(4)] HRESULT IsCollection([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(4)] HRESULT IsCollection([in] VARIANT_BOOL newVal);
+	[propget, id(5)] HRESULT Value([out, retval] VARIANT* pVal);
+	[propput, id(5)] HRESULT Value([in] VARIANT newVal);
+	[propget, id(6)] HRESULT ValueUseful([out, retval] VARIANT_BOOL* pVal);
+	[propput, id(6)] HRESULT ValueUseful([in] VARIANT_BOOL newVal);
+};
+[
+	object,
+	uuid(DF1275D2-C26E-44ED-9E2A-0DF7B58E08AF),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICoClassInfo : IDispatch{
+	[propget, id(1)] HRESULT CLSID([out, retval] BSTR* pVal);
+	[propget, id(2)] HRESULT InprocServer32([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT ProgID([out, retval] BSTR* pVal);
+	[propget, id(4)] HRESULT TypeLibInfo([out, retval] IDispatch** pVal);
+};
+[
+	object,
+	uuid(7B2C27F4-A08F-4F4B-BBC4-44DA25334476),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ITypeLibInfo : IDispatch{
+	[propget, id(1)] HRESULT GUID([out, retval] BSTR* pVal);
+	[propget, id(2)] HRESULT Name([out, retval] BSTR* pVal);
+	[propget, id(3)] HRESULT VerMajor([out, retval] SHORT* pVal);
+	[propget, id(4)] HRESULT VerMinor([out, retval] SHORT* pVal);
+	[propget, id(5)] HRESULT TypeLibFile32([out, retval] BSTR* pVal);
+	[propget, id(6)] HRESULT TypeLibFile64([out, retval] BSTR* pVal);
+};
+[
+	uuid(77EAA6F3-5CAE-4620-B63A-E3F811CC2533),
+	version(1.0),
+
+]
+library ComUtilityLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(82620C60-CC4E-41B6-A184-6E9ED3FBA41B)		
+	]
+	coclass IfInfo
+	{
+		[default] interface IIfInfo;
+	};
+	[
+		uuid(C5829FEF-5480-4BB5-8CC6-9A6209E85B0C)		
+	]
+	coclass Reflector
+	{
+		[default] interface IReflector;
+	};
+	[
+		uuid(0FCC9F7E-601D-4542-9FDD-F9136B005956)		
+	]
+	coclass VariantCollection
+	{
+		[default] interface IVariantCollection;
+	};
+	[
+		uuid(0B46BD13-5612-4BED-BE26-5BCEA4225D6F)		
+	]
+	coclass DispIfInfo
+	{
+		[default] interface IDispIfInfo;
+	};
+	[
+		uuid(AE77E4DA-267D-41A2-9C8F-7452E808181F)		
+	]
+	coclass PropertyDesc
+	{
+		[default] interface IPropertyDesc;
+	};
+	[
+		uuid(1D5E9E4D-7ED2-4297-A209-E9E7DD861C37)		
+	]
+	coclass CoClassInfo
+	{
+		[default] interface ICoClassInfo;
+	};
+	[
+		uuid(708122C8-D088-4C90-AF62-DA3C1F635F59)		
+	]
+	coclass TypeLibInfo
+	{
+		[default] interface ITypeLibInfo;
+	};
+};
+

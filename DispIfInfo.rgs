@@ -1,0 +1,26 @@
+HKCR
+{
+	ComUtilityLib.DispIfInfo.1 = s 'DispIfInfo Class'
+	{
+		CLSID = s '{0B46BD13-5612-4BED-BE26-5BCEA4225D6F}'
+	}
+	ComUtilityLib.DispIfInfo = s 'DispIfInfo Class'
+	{		
+		CurVer = s 'ComUtilityLib.DispIfInfo.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0B46BD13-5612-4BED-BE26-5BCEA4225D6F} = s 'DispIfInfo Class'
+		{
+			ProgID = s 'ComUtilityLib.DispIfInfo.1'
+			VersionIndependentProgID = s 'ComUtilityLib.DispIfInfo'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{77EAA6F3-5CAE-4620-B63A-E3F811CC2533}'
+			Version = s '1.0'
+		}
+	}
+}

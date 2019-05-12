@@ -1,0 +1,26 @@
+HKCR
+{
+	ComUtilityLib.PropertyDesc.1 = s 'PropertyDesc Class'
+	{
+		CLSID = s '{AE77E4DA-267D-41A2-9C8F-7452E808181F}'
+	}
+	ComUtilityLib.PropertyDesc = s 'PropertyDesc Class'
+	{		
+		CurVer = s 'ComUtilityLib.PropertyDesc.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {AE77E4DA-267D-41A2-9C8F-7452E808181F} = s 'PropertyDesc Class'
+		{
+			ProgID = s 'ComUtilityLib.PropertyDesc.1'
+			VersionIndependentProgID = s 'ComUtilityLib.PropertyDesc'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{77EAA6F3-5CAE-4620-B63A-E3F811CC2533}'
+			Version = s '1.0'
+		}
+	}
+}

@@ -1,0 +1,26 @@
+HKCR
+{
+	ComUtilityLib.Reflector.1 = s 'Reflector Class'
+	{
+		CLSID = s '{C5829FEF-5480-4BB5-8CC6-9A6209E85B0C}'
+	}
+	ComUtilityLib.Reflector = s 'Reflector Class'
+	{		
+		CurVer = s 'ComUtilityLib.Reflector.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C5829FEF-5480-4BB5-8CC6-9A6209E85B0C} = s 'Reflector Class'
+		{
+			ProgID = s 'ComUtilityLib.Reflector.1'
+			VersionIndependentProgID = s 'ComUtilityLib.Reflector'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{77EAA6F3-5CAE-4620-B63A-E3F811CC2533}'
+			Version = s '1.0'
+		}
+	}
+}

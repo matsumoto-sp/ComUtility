@@ -1,0 +1,26 @@
+HKCR
+{
+	ComUtility.VariantCollection.1 = s 'VariantCollection Class'
+	{
+		CLSID = s '{0FCC9F7E-601D-4542-9FDD-F9136B005956}'
+	}
+	ComUtility.VariantCollection = s 'VariantCollection Class'
+	{		
+		CurVer = s 'ComUtility.VariantCollection.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0FCC9F7E-601D-4542-9FDD-F9136B005956} = s 'VariantCollection Class'
+		{
+			ProgID = s 'ComUtility.VariantCollection.1'
+			VersionIndependentProgID = s 'ComUtility.VariantCollection'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{77EAA6F3-5CAE-4620-B63A-E3F811CC2533}'
+			Version = s '1.0'
+		}
+	}
+}

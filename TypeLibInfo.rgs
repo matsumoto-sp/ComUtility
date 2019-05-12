@@ -1,0 +1,26 @@
+HKCR
+{
+	ComUtilityLib.TypeLibInfo.1 = s 'TypeLibInfo Class'
+	{
+		CLSID = s '{708122C8-D088-4C90-AF62-DA3C1F635F59}'
+	}
+	ComUtilityLib.TypeLibInfo = s 'TypeLibInfo Class'
+	{		
+		CurVer = s 'ComUtilityLib.TypeLibInfo.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {708122C8-D088-4C90-AF62-DA3C1F635F59} = s 'TypeLibInfo Class'
+		{
+			ProgID = s 'ComUtilityLib.TypeLibInfo.1'
+			VersionIndependentProgID = s 'ComUtilityLib.TypeLibInfo'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{77EAA6F3-5CAE-4620-B63A-E3F811CC2533}'
+			Version = s '1.0'
+		}
+	}
+}
